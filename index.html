@@ -11,8 +11,8 @@
 		<link rel='stylesheet' href='css/styles.css' type='text/css'>
 	</head>
 
-	<body>
-		<nav class="navbar navbar-inverse" role="navigation">
+	<body >
+		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
@@ -30,11 +30,17 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="#">Action</a></li>
-								<li><a href="#">Another action</a></li>
-								<li><a href="#">Something else here</a></li>
+								
+								<li><a href="#">Most Viewed</a></li>
 								<li class="divider"></li>
-								<li><a href="#">Separated link</a></li>
+								<li><a href="#">less Views</a></li>
+								<li class="divider"></li>
+								<li><a href="#">best ranting</a></li>
+								<li class="divider"></li>
+								<li><a href="#">worst ranting</a></li>
+								<li class="divider"></li>
+								<li><a href="#">alphabetical</a></li>
+
 							</ul>
 						</li>
 						<form class="navbar-form navbar-left" role="search">
@@ -46,52 +52,65 @@
 					</ul>
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
-		</nav>
-		<div class="navbar navbar-inverse navbar-fixed-bottom">
+		</nav><!-- end nav -->
+
+		<div class="navbar navbar-inverse navbar-fixed-bottom" >
 			<div class="container">
 				<p class="navbar-text pull-left">Site Built By: Brandon Cospin</p>
 				<a href="https://github.com/alfpain" target="blank" class="navbar-btn btn-info btn pull-right">Look my Github</a>
 			</div>
-		</div>
+		</div><!--navbar navbar-inverse navbar-fixed-bottom -->
 		<div class="container">
-		<div class="jumbotron top">
-			<div class = "row">
-				<div class = "col-md-12">
-					<img src= "http://static.wixstatic.com/media/0d48ef_2e20858fc3ba764ea69356ef9802bad8.png" class="col-xs-5 img-responsive col-md-2">	
-					<img src= "http://elpoderdelasideas.com/wp-content/uploads/Vevo-logo-2013.png" class="col-xs-7 img-responsive col-md-6">
-					<a href="https://twitter.com/Vevo" target="blank">
-						<img src= "http://icons.iconarchive.com/icons/hopstarter/social-networking/128/Twitter-icon.png" class="col-xs-4 img-responsive col-md-2">
-					</a>
-					<a href="https://www.facebook.com/VEVO" target="blank">
-						<img src= "http://icons.iconarchive.com/icons/hopstarter/social-networking/128/Facebook-icon.png" class="col-xs-4 img-responsive col-md-2">
-					</a>
-				</div>
-			</div>
-		</div>
-		</div>
-
+			<div class="jumbotron top">
+				<div class = "row">
+					<div class = "col-md-12"> 
+						<a href="http://store.roadrunnerrecords.com/" target="blank">
+							<img src= "http://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Roadrunner_Records_Logo.svg/500px-Roadrunner_Records_Logo.svg.png" class="col-xs-7 img-responsive col-md-6">
+						</a>
+						<a href="https://www.youtube.com/user/RoadrunnerRecords" target="blank">
+							<img src= "https://pbs.twimg.com/profile_images/532967158980952066/BcHAJIfC_400x400.jpeg" class="col-xs-5 img-responsive col-md-2">	
+						</a>
+						<a href="https://twitter.com/rrusa" target="blank">
+							<img src= "http://icons.iconarchive.com/icons/hopstarter/social-networking/128/Twitter-icon.png" class="col-xs-4 img-responsive col-md-2">
+						</a>
+						<a href="https://www.facebook.com/roadrunnerrecords" target="blank">
+							<img src= "http://icons.iconarchive.com/icons/hopstarter/social-networking/128/Facebook-icon.png" class="col-xs-4 img-responsive col-md-2">
+						</a>
+					</div> <!--col-md-12-->
+				</div> <!--row-->
+			</div> <!-- jumbotron -->
+		</div> <!-- container -->
 		<div class = "container">
 			<div class = "row">
 				<div class = "col-md-4">
-					<div class="panel panel-default">
+					<div class="panel panel-inverse">
 						<div class="panel-heading">Lista</div>
 						<div class = "panel-body">
-						</div>
-					</div>
-				</div>
+							<div data-bind="foreach: model.items">
+									<div data-bind = "click:function(){$('.videos').empty(); $('.videos').append('<iframe width=\'715\' height=\'405\' src=\'http://www.youtube.com/embed/' + id.videoId+'\' frameborder=\'0\' allowfullscreen></iframe>');}"  class = "lista">
+										<div data-bind = "text: snippet.title"></div>
+										<img width="16px" height="16px" data-bind="attr:{src: snippet.thumbnails.default.url}"/>
+									</div>  <!-- click:funtion()-->
+							</div> <!-- foreach: model.items-->
+						</div> <!--panel-boy-->
+					</div>  <!--panel panel-inerse-->
+				</div>  <!--col-md-4-->
 				<div class = "col-md-8">
-						<div class="panel panel-default">
+					<div class="panel panel-inverse">
 						<div class="panel-heading">Videos</div>
 						<div class = "panel-body">
+
+							<div class = "videos embed-responsive embed-responsive-4by3"></div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-		
+			</div> <!--row-->
+		</div>  <!--container-->
+		<script src="js/jquery-2.1.1.js"></script>
+		<script src="js/knockout-3.2.0.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="bootstrap/js/bootstrap.min.js"></script>
 		<script src="js/script.js"></script>
 	</body>
-<!-- https://console.developers.google.com/project/prueba-proyecto1/apiui/credential -->
+<!-- AIzaSyDkKZ_c3uy_YS3r-fzb63DwlAk4xrKEJ48 -->
 </html>

@@ -1,14 +1,27 @@
 
 img {
 
-height: 100px;
+	height: 100px;
 
-width: 100px;
+	width: 100px;
 
 }
 
 .jumbotron {
   
-  background-image: url("http://oboi.ws/wallpapers/big_9941_oboi_temnyj_fon.jpg");
+	background-image: url("http://oboi.ws/wallpapers/big_9941_oboi_temnyj_fon.jpg");
 
+}
+
+.lista {
+	border-style: groove;
+}
+
+.panel {
+	background-color: gray;
+	color: black;
+}
+
+.panel-body {
+	background-color: white;
 }
