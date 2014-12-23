@@ -31,7 +31,7 @@ $(document).ready(function($) {
 				stringUrl = stringUrl + parsed_json["items"][i]["id"]["videoId"];
 			}else{
 				stringUrl = parsed_json["items"][i]["id"]["videoId"]+ "%2C+" +stringUrl
-			};		
+			};
 		};
 		
 		newUrl = "https://www.googleapis.com/youtube/v3/videos?part=snippet%2C+statistics&id="+stringUrl+"&maxResults=10&key=AIzaSyCZIdvJkrCNDjswEeRtMTbN6B9yEiz2pEo"
