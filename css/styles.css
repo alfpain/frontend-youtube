@@ -1,11 +1,7 @@
-
-img {
-
-	height: 100px;
-
-	width: 100px;
-
+body {
+	margin-bottom: 50px;
 }
+
 
 .jumbotron {
   
@@ -24,4 +20,20 @@ img {
 
 .panel-body {
 	background-color: white;
+}
+@font-face {
+    font-family: 'king'; /*a name to be used later*/
+    src: url('Kingthings_Extortion.ttf'); /*URL to font*/
+}
+
+.classname {
+    font-family: 'king';
+    font-size: 60px;
+
+}
+
+.videos {
+	background: black;
+
+
 }
