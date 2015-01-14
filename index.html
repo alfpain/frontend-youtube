@@ -51,9 +51,32 @@
 						</li>
 						<form class="navbar-form navbar-left" role="search">
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="Search">
+								<input type="text" class="form-control" placeholder="Search"  name = "buscar">
 							</div>
-							<button type="submit" class="btn btn-primary dropdown-toggle">Submit</button>
+
+								<!-- Button trigger modal -->
+								<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="modal" data-target="#myModal" id = "buscador">
+								  Search
+								</button>
+
+								<!-- Modal -->
+								<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								  <div class="modal-dialog">
+								    <div class="modal-content">
+								      <div class="modal-header">
+								        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								        <h4 class="modal-title" id="myModalLabel">Result</h4>
+								      </div>
+								      <div class="modal-body ">
+								        <table class = "table table-striped table-hover mostrar"></table>
+								      </div>
+								      <div class="modal-footer">
+								        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+								      </div>
+								    </div>
+								  </div>
+								</div>
 						</form>
 					</ul>
 				</div><!-- /.navbar-collapse -->
@@ -70,20 +93,25 @@
 			<div class="jumbotron top">
 				<div class = "row">
 					<div class = "col-md-12"> 
-						<a href="http://store.roadrunnerrecords.com/" target="blank">
-							<div  class="col-md-5">
+						<a>
+							<div  class="col-md-4">
 							<span class  = "classname">Hola Soy German</span>	
 							</div>
 						</a>
-						<a href="https://www.youtube.com/user/RoadrunnerRecords" target="blank">
-							<img src= "http://icons.iconarchive.com/icons/graphics-vibe/classic-3d-social/256/youtube-icon.png" class="col-xs-5 img-responsive col-md-2">
+						<a href="http://instagram.com/germanchelo" target="blank">
+							<img src= "http://www.logoeps.net/wp-content/uploads/2012/12/Instagram_Icon_Large.png" class="col-xs-4 img-responsive col-md-2">
 						</a>
-						<a href="https://twitter.com/rrusa" target="blank">
+						<a href="https://www.youtube.com/user/HolaSoyGerman" target="blank">
+							<img src= "http://icons.iconarchive.com/icons/graphics-vibe/classic-3d-social/256/youtube-icon.png" class="col-xs-4 img-responsive col-md-2">
+						</a>
+						<a href="https://twitter.com/germangarmendia" target="blank">
 							<img src= "http://icons.iconarchive.com/icons/hopstarter/social-networking/128/Twitter-icon.png" class="col-xs-4 img-responsive  col-md-2">
 						</a>
-						<a href="https://www.facebook.com/roadrunnerrecords" target="blank">
+						<a href="https://www.facebook.com/HolaSoyGerman" target="blank">
 							<img src= "http://icons.iconarchive.com/icons/hopstarter/social-networking/128/Facebook-icon.png" class="col-xs-4 img-responsive col-md-2">
 						</a>
+												</a>
+						
 					</div> <!--col-md-12-->
 				</div> <!--row-->
 			</div> <!-- jumbotron -->
@@ -108,14 +136,20 @@
 					</div>  <!--panel panel-inerse-->
 				</div>  <!--col-md-4-->
 				<div class = "col-md-6">
+
 					<div class="panel panel-inverse">
+
 						<div class="panel-heading">Videos</div>
 						<div class = "videos embed-responsive embed-responsive-4by3 img-responsive col-xs-12">
+
 						</div>
 					</div>
 				</div>
 			</div> <!--row-->
+			<header> 
+
 		</div>  <!--container-->
+
 		
 		<script src="js/jquery-2.1.1.js"></script>
 		<script src="js/knockout-3.2.0.js"></script>
