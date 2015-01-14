@@ -15,7 +15,7 @@
 	</head>
 
 	<body>
-		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+		<nav class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="navigation">
 			<div class="container-fluid">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
@@ -124,12 +124,11 @@
 						
 						<div data-bind="kendoGrid: gridOptions"></div>
 					        <script id="rowTmpl" type="text/html">
-					            <tr data-bind="click:function() {$('.videos').empty(); $('.videos').slideUp();  $('.videos').slideDown();$('.videos').append('<iframe width=\'560\' height=\'315\' src=\'http://www.youtube.com/embed/'+ids+'\' frameborder=\'0\' allowfullscreen></iframe>')}">
+					            <tr data-bind="click:function() {$('.videos').empty(); $('.videos').slideUp();  $('.videos').slideDown();$('.videos').append('<iframe width=\'560\' height=\'315\' src=\'http://www.youtube.com/embed/'+ids+'\' frameborder=\'0\' allowfullscreen></iframe>');$('.info').empty();$('.info').append('<div>'+'<strong>'+'N. comment: '+'</strong>'+comment+'<strong>'+'   N. likes: '+'</strong>'+like+'<strong>'+'  N. View Count: '+'</strong>'+view+'</div>');}">
+					               <td> <img width="100px" height="100px" data-bind="attr:{src: images}" /></td>
 					                <td data-bind="text: name"></td>
-					                <td> <img width="100px" height="100px" data-bind="attr:{src: images}" /></td>
-									<td data-bind="text: view"></td>
-									<td data-bind="text: like"></td>
-									<td data-bind="text: comment"></td>
+					                
+
 					            </tr>
 					        </script>
 					
@@ -146,7 +145,16 @@
 					</div>
 				</div>
 			</div> <!--row-->
-			<header> 
+			<div class = "row">
+				<div class = "col-md-12">
+					<div class="panel panel-inverse">
+						<div class="panel-heading">Informacion Video</div>
+						<div class = "panel-body info"></div>
+
+
+					</div>  <!--panel panel-inerse-->
+				</div>
+			</div>
 
 		</div>  <!--container-->
 

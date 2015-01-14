@@ -11,8 +11,9 @@ title = [];
 description = [];
 image = [];
 
-function Video(link){
+function Video(link,Comment,Like,VIEWCOUNT){
 $(".videos").empty();
+$(".info").empty();
 $('.videos').slideUp();  
 $('.videos').slideDown();
 $("input").val("");
@@ -20,6 +21,7 @@ $("input").val("");
 var videoUrl = '<iframe width="560" height="315" src="http://www.youtube.com/embed/'
 var RestoDelUrls = ' frameborder="0" allowfullscreen>'
 $(".videos").append(videoUrl+link+'"'+RestoDelUrls+'</iframe>');
+$(".info").append('<div>'+"<strong>"+"N. comment: "+"</strong>"+Comment+"<strong>"+"   N. likes: "+"</strong>"+Like+"<strong>"+"  N. View Count: "+"</strong>"+VIEWCOUNT+'</div>');
 }
 
 $(document).ready(function($) {
@@ -50,7 +52,7 @@ $(document).ready(function($) {
 					commentCount.push(parsed_jso["items"][e]["statistics"]["commentCount"])
 					image.push(parsed_jso["items"][e]["snippet"]["thumbnails"]["default"]["url"])
 				};			
-			//console.log(id)
+			console.log(description)
 			//console.log(title)
 			var initialData = []
 			for (var e = 0; e<=49; e++) {
@@ -62,6 +64,7 @@ $(document).ready(function($) {
 			
 	for (var x = 0; x <49; x++) {
 		/*console.log(initialData[x]["name"])*/
+		console.log(description[x])
 		var ini  = $("input[name=buscar]").val();
 		var busqueda = initialData[x]["name"]
 		var resultado = busqueda.toLowerCase();
@@ -73,7 +76,7 @@ $(document).ready(function($) {
 			//console.log("palabra no encontrada" );
 		}else{
 			/*console.log("el resultado es" , initialData[x]["name"])*/
-		$(".mostrar").append("<tr>"+"<td>"+initialData[x]["name"]+"</td>"+"<td>"+'<button type="button" class="btn btn-primary" onClick="Video(\''+id[x]+'\')" data-dismiss="modal">'+'Load Video'+'</button>'+"</td>"+"</tr>");
+		$(".mostrar").append("<tr>"+"<td>"+initialData[x]["name"]+"</td>"+"<td>"+'<button type="button" class="btn btn-primary" onClick="Video(\''+id[x]+'\',\''+commentCount[x]+'\',\''+likeCount[x]+'\',\''+viewCount[x]+'\')" data-dismiss="modal">'+'Load Video'+'</button>'+"</td>"+"</tr>");
 
 		}
 		};
@@ -134,20 +137,12 @@ var ViewModel = function(items) {
 
 		columns: [ 
 			{
-				title: "Name"
+				title: "Image"
 			},
 			{
-				title: "Image"   
+				title: "Name"   
 			},
-			{
-				title: "View Count"
-			},
-			{
-				title: "Like Count"
-			},
-			{
-				title: "Comment Count"
-			},
+
 		],
 	pageable: {
 		
