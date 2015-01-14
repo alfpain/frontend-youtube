@@ -15,6 +15,8 @@ function Video(link){
 $(".videos").empty();
 $('.videos').slideUp();  
 $('.videos').slideDown();
+$("input").val("");
+
 var videoUrl = '<iframe width="560" height="315" src="http://www.youtube.com/embed/'
 var RestoDelUrls = ' frameborder="0" allowfullscreen>'
 $(".videos").append(videoUrl+link+'"'+RestoDelUrls+'</iframe>');
@@ -71,7 +73,7 @@ $(document).ready(function($) {
 			//console.log("palabra no encontrada" );
 		}else{
 			/*console.log("el resultado es" , initialData[x]["name"])*/
-		$(".mostrar").append("<tr>"+"<td>"+initialData[x]["name"]+"</td>"+"<td>"+'<button type="button" class="btn btn-primary" onClick="Video(\''+id[x]+'\')">'+'Load Video'+'</button>'+"</td>"+"</tr>");
+		$(".mostrar").append("<tr>"+"<td>"+initialData[x]["name"]+"</td>"+"<td>"+'<button type="button" class="btn btn-primary" onClick="Video(\''+id[x]+'\')" data-dismiss="modal">'+'Load Video'+'</button>'+"</td>"+"</tr>");
 
 		}
 		};
