@@ -21,5 +21,4 @@ Lo más importante para aprender de este proyecto es el buen uso de Knockout. Al
 5. Qué fue algo que aprendiste y te sorprendió?
 
 
-##Ver mi Pagina
-###  http://alfpain.github.io/frontend-youtube
+
