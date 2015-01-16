@@ -20,7 +20,4 @@ Lo más importante para aprender de este proyecto es el buen uso de Knockout. Al
 4. Porqué es útil MVC y describe cómo lo usa Knockout?
 5. Qué fue algo que aprendiste y te sorprendió?
 
-## para ver mi pagina
-###  http://alfpain.github.io/frontend-youtube
-
 
