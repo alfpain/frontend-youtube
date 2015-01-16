@@ -43,3 +43,7 @@ body {
 .info {
 	text-align: center;
 }
+
+.dropdown-backdrop {
+	position: static;
+}
